@@ -1,0 +1,54 @@
+{
+  "appTitle": "Shaxsiy Byudjet Paneli",
+
+  "monthButton": "Dekabr Byudjeti",
+  "languageLabel": "Til:",
+  "currencyLabel": "Valyuta:",
+  "headerQuote": "Pulni och talaba emas, aqlli kattalardek boshqar.",
+
+  "totalIncome": "Jami Daromad",
+  "totalExpenses": "Jami Xarajatlar",
+  "balanceLeft": "Qoldiq",
+
+  "addIncome": "Daromad qoʻshish",
+  "incomeSource": "Manba",
+  "amountLabel": "Miqdori (₩)",
+  "addIncomeBtn": "+ Daromad qoʻshish",
+
+  "addExpense": "Xarajat qoʻshish",
+  "descLabel": "Tavsif",
+  "categoryLabel": "Kategoriya",
+  "addExpenseBtn": "+ Xarajat qoʻshish",
+
+  "catFood": "Ovqat",
+  "catTransport": "Transport",
+  "catUtilities": "Kommunal",
+  "catRent": "Ijara",
+  "catDebt": "Qarz",
+  "catFun": "Koʻngilochar",
+  "catOther": "Boshqa",
+
+  "expenseDetails": "Xarajatlar Tafsiloti",
+  "tableDate": "Sana",
+  "tableDesc": "Tavsif",
+  "tableCategory": "Kategoriya",
+  "tableAmount": "Miqdor (₩)",
+
+  "aiAnalysis": "AI Byudjet Tahlili",
+  "analyzeBtn": "💡 Tahlil qilish",
+
+  "footerText": "Botirov byudjeti uchun yaratilgan. Endi “pul qayerga ketdi?” degan savol bo‘lmaydi.",
+
+  "jan": "Yanvar",
+  "feb": "Fevral",
+  "mar": "Mart",
+  "apr": "Aprel",
+  "may": "May",
+  "jun": "Iyun",
+  "jul": "Iyul",
+  "aug": "Avgust",
+  "sep": "Sentabr",
+  "oct": "Oktabr",
+  "nov": "Noyabr",
+  "dec": "Dekabr"
+}

@@ -1,0 +1,27 @@
+{
+  "monthButton": "December Budget",
+  "languageLabel": "Language:",
+  "currencyLabel": "Currency:",
+  "appTitle": "Personal Budget Dashboard",
+  "headerQuote": "Control your money like an adult, not like a hungry student.",
+  "totalIncome": "Total Income",
+  "totalExpenses": "Total Expenses",
+  "balanceLeft": "Left",
+  "addIncome": "Add Income",
+  "addExpense": "Add Expense",
+  "expenseDetails": "Expenses Details",
+  "items": "items",
+  
+  "jan": "January",
+  "feb": "February",
+  "mar": "March",
+  "apr": "April",
+  "may": "May",
+  "jun": "June",
+  "jul": "July",
+  "aug": "August",
+  "sep": "September",
+  "oct": "October",
+  "nov": "November",
+  "dec": "December"
+}

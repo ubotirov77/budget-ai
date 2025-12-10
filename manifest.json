@@ -1,0 +1,21 @@
+{
+  "name": "Botirov Budget Tracker",
+  "short_name": "Budget",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#050816",
+  "theme_color": "#050816",
+  "icons": [
+    {
+      "src": "assets/ai-robot.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/ai-robot.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- HEADER -->
+    <header class="app-header">
+      <div class="month-selector">
+        <button id="month-btn">December Budget</button>
+        <ul id="month-list" class="hidden">
+          <li data-month="January">January</li>
+          <li data-month="February">February</li>
+          <li data-month="March">March</li>
+          <li data-month="April">April</li>
+          <li data-month="May">May</li>
+          <li data-month="June">June</li>
+          <li data-month="July">July</li>
+          <li data-month="August">August</li>
+          <li data-month="September">September</li>
+          <li data-month="October">October</li>
+          <li data-month="November">November</li>
+          <li data-month="December">December</li>
+        </ul>
+      </div>
+
+      <div class="lang-selector">
+        <label>Language:</label>
+        <select id="lang-select">
+          <option value="en">English</option>
+          <option value="uz">Uzbek</option>
+        </select>
+      </div>
+
+      <div class="currency-selector">
+        <label>Currency:</label>
+        <select id="currency-select">
+          <option value="KRW">KRW</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="JPY">JPY</option>
+          <option value="UZS">UZS</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- SUMMARY -->
+    <section class="summary">
+      <div class="card income">
+        <h2>Total Income</h2>
+        <div id="total-income" class="amount">0</div>
+      </div>
+
+      <div class="card expenses">
+        <h2>Total Expenses</h2>
+        <div id="total-expenses" class="amount">0</div>
+      </div>
+
+      <div class="card balance">
+        <h2>Balance</h2>
+        <div id="total-balance" class="amount">0</div>
+      </div>
+    </section>
+
+    <!-- FORMS -->
+    <section class="forms">
+      <div class="form-card">
+        <h3>Add Income</h3>
+        <form id="income-form">
+          <div class="field">
+            <label>Source</label>
+            <input id="income-source" type="text" placeholder="e.g. Salary">
+          </div>
+          <div class="field">
+            <label>Amount</label>
+            <input id="income-amount" type="number" placeholder="e.g. 500000">
+          </div>
+          <button type="submit">Add Income</button>
+        </form>
+        <ul id="income-list" class="list"></ul>
+      </div>
+
+      <div class="form-card">
+        <h3>Add Expense</h3>
+        <form id="expense-form">
+          <div class="field">
+            <label>Description</label>
+            <input id="expense-desc" type="text" placeholder="e.g. Groceries">
+          </div>
+          <div class="field">
+            <label>Category</label>
+            <select id="expense-category">
+              <option value="Food">Food</option>
+              <option value="Transport">Transport</option>
+              <option value="Shopping">Shopping</option>
+              <option value="Bills">Bills</option>
+              <option value="Debt">Debt</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Amount</label>
+            <input id="expense-amount" type="number" placeholder="e.g. 23000">
+          </div>
+          <button type="submit">Add Expense</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- EXPENSE TABLE -->
+    <section class="table-section">
+      <div class="table-header">
+        <span>Expenses</span>
+        <span id="expense-count">0 items</span>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th class="right">Amount</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="expense-table-body"></tbody>
+      </table>
+    </section>
+
+    <!-- AI BUTTON -->
+    <div class="ai-button-box">
+      <button id="ai-analyze-btn" class="ai-img-btn">
+        <img src="assets/ai-robot.png" alt="AI Robot">
+      </button>
+    </div>
+
+    <footer class="app-footer">Budget Tracker © 2025</footer>
+
+  </div>
+
+  
+  <!-- POPUP -->
+<div id="ai-popup" class="ai-popup">
+  <div class="ai-popup-content">
+    <div class="ai-popup-header">
+      <h2 class="popup-title">AI Budget Analysis</h2>
+      <button id="ai-close-btn" class="close-btn">×</button>
+    </div>
+
+    <div id="popup-ai-output" class="ai-popup-body">
+      <!-- AI text will be injected here -->
+    </div>
+
+    <!-- optional tiny robot, will be hidden on mobile by CSS anyway -->
+    <div class="ai-popup-robot">
+      <img src="assets/ai-robot.png" alt="Robot assistant">
+    </div>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
