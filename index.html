@@ -3,98 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Budget Tracker</title>
+  <meta name="theme-color" content="#05060f">
+  <title>Budget Tracker — Premium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <div class="app">
 
-    <!-- HEADER -->
+    <!-- ===================== HEADER ===================== -->
     <header class="app-header">
-      <div class="month-selector">
-        <button id="month-btn">December Budget</button>
-        <ul id="month-list" class="hidden">
-          <li data-month="January">January</li>
-          <li data-month="February">February</li>
-          <li data-month="March">March</li>
-          <li data-month="April">April</li>
-          <li data-month="May">May</li>
-          <li data-month="June">June</li>
-          <li data-month="July">July</li>
-          <li data-month="August">August</li>
-          <li data-month="September">September</li>
-          <li data-month="October">October</li>
-          <li data-month="November">November</li>
-          <li data-month="December">December</li>
-        </ul>
+      <div class="brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 17l6-6 4 4 8-8"></path>
+            <path d="M15 7h6v6"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <div class="brand-title">Budget Tracker</div>
+          <div class="month-selector">
+            <button id="month-btn" type="button">December Budget</button>
+            <ul id="month-list" class="hidden">
+              <li data-month="January">January</li>
+              <li data-month="February">February</li>
+              <li data-month="March">March</li>
+              <li data-month="April">April</li>
+              <li data-month="May">May</li>
+              <li data-month="June">June</li>
+              <li data-month="July">July</li>
+              <li data-month="August">August</li>
+              <li data-month="September">September</li>
+              <li data-month="October">October</li>
+              <li data-month="November">November</li>
+              <li data-month="December">December</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <div class="lang-selector">
-        <label>Language:</label>
-        <select id="lang-select">
-          <option value="en">English</option>
-          <option value="uz">Uzbek</option>
-        </select>
-      </div>
-
-      <div class="currency-selector">
-        <label>Currency:</label>
-        <select id="currency-select">
-          <option value="KRW">KRW</option>
-          <option value="USD">USD</option>
-          <option value="EUR">EUR</option>
-          <option value="JPY">JPY</option>
-          <option value="UZS">UZS</option>
-        </select>
+      <div class="header-controls">
+        <div class="lang-selector">
+          <label for="lang-select">Lang</label>
+          <select id="lang-select">
+            <option value="en">English</option>
+            <option value="uz">Uzbek</option>
+          </select>
+        </div>
+        <div class="currency-selector">
+          <label for="currency-select">Currency</label>
+          <select id="currency-select">
+            <option value="KRW">KRW</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="JPY">JPY</option>
+            <option value="UZS">UZS</option>
+          </select>
+        </div>
       </div>
     </header>
 
-    <!-- SUMMARY -->
+    <!-- ===================== SUMMARY ===================== -->
     <section class="summary">
       <div class="card income">
-        <h2>Total Income</h2>
+        <div class="card-top">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 19V5"></path><path d="M5 12l7-7 7 7"></path>
+            </svg>
+          </div>
+          <h2>Total Income</h2>
+        </div>
         <div id="total-income" class="amount">0</div>
+        <div class="card-foot"><span id="income-count-label">0 sources</span></div>
       </div>
 
       <div class="card expenses">
-        <h2>Total Expenses</h2>
+        <div class="card-top">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 5v14"></path><path d="M19 12l-7 7-7-7"></path>
+            </svg>
+          </div>
+          <h2>Total Expenses</h2>
+        </div>
         <div id="total-expenses" class="amount">0</div>
+        <div class="card-foot"><span id="spend-ratio-label">0% of income</span></div>
       </div>
 
       <div class="card balance">
-        <h2>Balance</h2>
+        <div class="card-top">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="6" width="20" height="13" rx="3"></rect>
+              <path d="M2 10h20"></path><path d="M17 15h2"></path>
+            </svg>
+          </div>
+          <h2>Balance</h2>
+        </div>
         <div id="total-balance" class="amount">0</div>
+        <div class="bar"><span id="balance-bar"></span></div>
       </div>
     </section>
 
-    <!-- FORMS -->
+    <!-- ===================== FORMS ===================== -->
     <section class="forms">
-      <div class="form-card">
-        <h3>Add Income</h3>
+      <div class="form-card is-income">
+        <h3><span class="dot"></span> Add Income</h3>
         <form id="income-form">
           <div class="field">
-            <label>Source</label>
-            <input id="income-source" type="text" placeholder="e.g. Salary">
+            <label for="income-source">Source</label>
+            <input id="income-source" type="text" placeholder="e.g. Salary" autocomplete="off">
           </div>
           <div class="field">
-            <label>Amount</label>
-            <input id="income-amount" type="number" placeholder="e.g. 500000">
+            <label for="income-amount">Amount</label>
+            <input id="income-amount" type="number" placeholder="e.g. 500000" min="0" step="any">
           </div>
           <button type="submit">Add Income</button>
         </form>
         <ul id="income-list" class="list"></ul>
       </div>
 
-      <div class="form-card">
-        <h3>Add Expense</h3>
+      <div class="form-card is-expense">
+        <h3><span class="dot"></span> Add Expense</h3>
         <form id="expense-form">
           <div class="field">
-            <label>Description</label>
-            <input id="expense-desc" type="text" placeholder="e.g. Groceries">
+            <label for="expense-desc">Description</label>
+            <input id="expense-desc" type="text" placeholder="e.g. Groceries" autocomplete="off">
           </div>
           <div class="field">
-            <label>Category</label>
+            <label for="expense-category">Category</label>
             <select id="expense-category">
               <option value="Food">Food</option>
               <option value="Transport">Transport</option>
@@ -105,66 +144,96 @@
             </select>
           </div>
           <div class="field">
-            <label>Amount</label>
-            <input id="expense-amount" type="number" placeholder="e.g. 23000">
+            <label for="expense-amount">Amount</label>
+            <input id="expense-amount" type="number" placeholder="e.g. 23000" min="0" step="any">
           </div>
           <button type="submit">Add Expense</button>
         </form>
       </div>
     </section>
 
-    <!-- EXPENSE TABLE -->
-    <section class="table-section">
-      <div class="table-header">
-        <span>Expenses</span>
-        <span id="expense-count">0 items</span>
+    <!-- ===================== INSIGHTS / DONUT ===================== -->
+    <section class="insights">
+      <div class="section-title">
+        <h3>Spending by Category</h3>
+        <span class="hint">Live breakdown</span>
       </div>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Description</th>
-            <th>Category</th>
-            <th class="right">Amount</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id="expense-table-body"></tbody>
-      </table>
+      <div class="chart-wrap">
+        <div class="donut-box">
+          <svg id="donut" viewBox="0 0 120 120"></svg>
+          <div class="donut-center">
+            <div class="dc-label" id="donut-label">Total spent</div>
+            <div class="dc-value" id="donut-value">0</div>
+          </div>
+        </div>
+        <div id="legend" class="legend"></div>
+      </div>
     </section>
 
-    <!-- AI BUTTON -->
+    <!-- ===================== EXPENSE TABLE ===================== -->
+    <section class="table-section">
+      <div class="table-header">
+        <span class="t-title">Expense History</span>
+        <span id="expense-count">0 items</span>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Category</th>
+              <th class="right">Amount</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="expense-table-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===================== AI BUTTON ===================== -->
     <div class="ai-button-box">
-      <button id="ai-analyze-btn" class="ai-img-btn">
-        <img src="assets/ai-robot.png" alt="AI Robot">
+      <button id="ai-analyze-btn" class="ai-img-btn" type="button">
+        <span class="ring"></span>
+        <span class="ai-avatar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="7" width="16" height="12" rx="4"></rect>
+            <path d="M12 3v4"></path><circle cx="12" cy="3" r="1.3" fill="#fff"></circle>
+            <circle cx="9" cy="13" r="1.4" fill="#fff" stroke="none"></circle>
+            <circle cx="15" cy="13" r="1.4" fill="#fff" stroke="none"></circle>
+            <path d="M9.5 16.5h5"></path>
+          </svg>
+        </span>
+        <span>Analyze with AI</span>
       </button>
     </div>
 
-    <footer class="app-footer">Budget Tracker © 2025</footer>
-
+    <footer class="app-footer">Budget Tracker © 2025 — Premium Edition</footer>
   </div>
 
-  
-  <!-- POPUP -->
-<div id="ai-popup" class="ai-popup">
-  <div class="ai-popup-content">
-    <div class="ai-popup-header">
-      <h2 class="popup-title">AI Budget Analysis</h2>
-      <button id="ai-close-btn" class="close-btn">×</button>
-    </div>
-
-    <div id="popup-ai-output" class="ai-popup-body">
-      <!-- AI text will be injected here -->
-    </div>
-
-    <!-- optional tiny robot, will be hidden on mobile by CSS anyway -->
-    <div class="ai-popup-robot">
-      <img src="assets/ai-robot.png" alt="Robot assistant">
+  <!-- ===================== AI POPUP ===================== -->
+  <div id="ai-popup" class="ai-popup">
+    <div class="ai-popup-content">
+      <div class="ai-popup-header">
+        <span class="ai-avatar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="7" width="16" height="12" rx="4"></rect>
+            <path d="M12 3v4"></path><circle cx="12" cy="3" r="1.3" fill="#fff"></circle>
+            <circle cx="9" cy="13" r="1.4" fill="#fff" stroke="none"></circle>
+            <circle cx="15" cy="13" r="1.4" fill="#fff" stroke="none"></circle>
+            <path d="M9.5 16.5h5"></path>
+          </svg>
+        </span>
+        <div>
+          <div class="popup-title">AI Budget Analysis</div>
+          <div class="popup-sub">Personal finance assistant</div>
+        </div>
+        <button id="ai-close-btn" class="close-btn" type="button" aria-label="Close">×</button>
+      </div>
+      <div id="popup-ai-output" class="ai-popup-body"></div>
     </div>
   </div>
-</div>
-
 
   <script src="script.js"></script>
 </body>
